@@ -1,12 +1,16 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
+
 plugins {
-  alias(libs.plugins.android.application)
-  alias(libs.plugins.kotlin)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin)
+    //alias(libs.plugins.ksp)
+    kotlin("kapt")
+    alias(libs.plugins.hilt)
 }
 
 android {
     namespace = "com.foodie"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.foodie"
@@ -29,13 +33,16 @@ android {
                 "proguard-rules.pro"
             )
         }
+
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -59,6 +66,28 @@ dependencies {
     implementation(platform(libs.compose.bom.ui))
     implementation(libs.bundles.compose)
 
+    implementation(libs.viewmodel.compose)
+
+    // Retrofit
+    implementation(libs.retrofit)
+
+    // Navigation
+    implementation(libs.navigation)
+
+    // Logging Libraries
+    implementation(libs.timber)
+
+    // Room Database
+    implementation(libs.bundles.room)
+    annotationProcessor(libs.room.compiler)
+    kapt(libs.room.compiler)
+    //ksp(libs.room.compiler)
+
+    //Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compile)
+
+    // Testing Dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

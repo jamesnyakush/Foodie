@@ -5,9 +5,16 @@ core-ktx = "1.10.1"
 espresso-core = "3.5.1"
 junit = "4.13.2"
 lifecycle-runtime-ktx = "2.6.1"
-bom ="2023.08.00"
-application ="8.1.0"
-kotlin= "1.8.10"
+bom = "2023.08.00"
+application = "8.1.0"
+kotlin = "1.8.10"
+timber = "5.0.1"
+room = "2.5.2"
+ksp = "1.8.10-1.0.9"
+retrofit = "2.9.0"
+navigation = "2.7.0"
+viewmodel-compose = "2.6.1"
+hilt = "2.44"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
@@ -17,6 +24,15 @@ compose-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
 compose-ui-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 compose-material3 = { module = "androidx.compose.material3:material3" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+navigation = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
+viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "viewmodel-compose" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compile = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 
 #Testing deps
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
@@ -26,6 +42,7 @@ junit = { module = "junit:junit", version.ref = "junit" }
 compose-ui-test = { module = "androidx.compose.ui:ui-test-junit4" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+
 
 [bundles]
 compose = [
@@ -39,6 +56,13 @@ compose-debug = [
     "compose-ui-manifest"
 ]
 
+room = [
+    "room-runtime",
+    "room-ktx"
+]
+
 [plugins]
-android-application = { id = "com.android.application", version.ref = "application"}
-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin"}
+android-application = { id = "com.android.application", version.ref = "application" }
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
