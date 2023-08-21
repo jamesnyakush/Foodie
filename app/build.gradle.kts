@@ -1,8 +1,9 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin)
+//    alias(libs.plugins.google.services)
+//    alias(libs.plugins.crashlytics)
     //alias(libs.plugins.ksp)
     kotlin("kapt")
     alias(libs.plugins.hilt)
@@ -46,6 +47,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -62,6 +64,10 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.analytics)
 
     implementation(platform(libs.compose.bom.ui))
     implementation(libs.bundles.compose)

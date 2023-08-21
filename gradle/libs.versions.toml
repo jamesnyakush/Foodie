@@ -15,6 +15,9 @@ retrofit = "2.9.0"
 navigation = "2.7.0"
 viewmodel-compose = "2.6.1"
 hilt = "2.44"
+firebase-bom = "32.2.2"
+google-services = "4.3.15"
+crashlytics = "2.9.8"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
@@ -33,6 +36,9 @@ navigation = { module = "androidx.navigation:navigation-compose", version.ref = 
 viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "viewmodel-compose" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compile = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
+firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics-ktx" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics-ktx" }
 
 #Testing deps
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
@@ -66,3 +72,5 @@ android-application = { id = "com.android.application", version.ref = "applicati
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
+crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlytics" }
