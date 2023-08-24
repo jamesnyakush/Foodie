@@ -1,6 +1,7 @@
 package com.foodie
 
 import android.app.Application
+import com.foodie.util.CrashlyticsTree
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 

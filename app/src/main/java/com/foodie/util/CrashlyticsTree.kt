@@ -1,4 +1,4 @@
-package com.foodie
+package com.foodie.util
 
 import android.util.Log
 import com.google.firebase.crashlytics.FirebaseCrashlytics

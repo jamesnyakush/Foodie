@@ -76,6 +76,7 @@ dependencies {
 
     // Retrofit
     implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
 
     // Navigation
     implementation(libs.navigation)
@@ -92,6 +93,8 @@ dependencies {
     //Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compile)
+
+    implementation("io.coil-kt:coil-compose:2.4.0")
 
     // Testing Dependencies
     testImplementation(libs.junit)
