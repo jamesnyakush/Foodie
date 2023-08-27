@@ -2,8 +2,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin)
-//    alias(libs.plugins.google.services)
-//    alias(libs.plugins.crashlytics)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.crashlytics)
     //alias(libs.plugins.ksp)
     kotlin("kapt")
     alias(libs.plugins.hilt)
@@ -94,7 +94,7 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compile)
 
-    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation(libs.coil.compose)
 
     // Testing Dependencies
     testImplementation(libs.junit)
